@@ -30,9 +30,7 @@ const oMovesStore = function (square) {
 }
 
 // this function compares the winCases array with the appropriate moves array
-const commonSquares = function (moves, winCases) {
-  // figure something out here
-}
+const commonSquares = winCases[subArray]
 
 // this function adds the moves function to add to the moves arrays and also checks for a win
 const checkWin = function (square) {
