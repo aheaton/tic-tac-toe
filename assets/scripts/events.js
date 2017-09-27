@@ -1,6 +1,6 @@
 const gameLogic = require('./logic.js')
-const gameApi = require('./api.js')
-const gameUi = require('./ui.js')
+const api = require('./api.js')
+const ui = require('./ui.js')
 const getFormFields = require('./../../lib/get-form-fields')
 
 const squareClick = function (event) {
