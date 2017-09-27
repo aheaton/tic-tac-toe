@@ -12,15 +12,55 @@
 </head>
 <body>
 <header>
-	<input type="text" placeholder="Username">
-	<input type="password" placeholder="Password">
-	<button>Login</button>
+<input class="signUpInButton btn btn-primary" type="button" value="Sign In -OR- Sign Up!">
 </header>
-
+<div class="modal fade" id="signUpInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalLabel">Sign In -OR- Sign Up</h3>
+        <h5>Please choose one of the options below so we can record your game stats for you.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="contactForm" class="inputFields">
+      <h5>Already have an account? Sign in!</h5>
+      <input type="text" name="credentials[email]" value="an@example.email" placeholder="Email Address">
+      <br />
+      <br />
+      <input type="password" name="credentials[password]" value="an example password" placeholder="Password">
+      <br />
+      <br />
+      <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+      <br />
+      <form id="contactForm" class="inputFields">
+      <h5>Don't have an account yet? Sign up!</h5>
+      <input type="text" name="credentials[email]" value="an@example.email" placeholder="Email Address">
+      <br />
+      <br />
+      <input type="password" name="credentials[password]" value="an example password" placeholder="Password">
+      <br />
+      <br />
+      <input type="password" name="credentials[password]" value="an example password" placeholder="Confirm Password">
+      <br />
+      <br />
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
 <main>
 <h1>Tic Tac Toe</h1>
 <br />
 <div id="gameStatusMessage"></div>
+</br>
 <table>
   <tr>
     <td id="0" class="square"></td>
@@ -39,7 +79,7 @@
   </tr>
 </table>
 <br />
-<input id="newGameButton" class="btn btn-primary" type="reset" value="New Game">
+<input id="newGameButton" class="btn btn-primary" type="button" value="New Game">
 </main>
 
 <footer class="clearfix">
