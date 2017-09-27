@@ -42,16 +42,19 @@ const gameStatus = function (winCases, moves) {
     // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
     if (common.length === 3 && moves === xMoves) {
       over = true
+      $('#newGameButton').show()
       return gameUi.xWins()
     } else if (common.length === 3 && moves === oMoves) {
       over = true
+      $('#newGameButton').show()
       return gameUi.oWins()
     }
   }
-}
-if (xMoves.length + oMoves.length === 9) {
-  over = true
-  gameUi.tie()
+  if (xMoves.length + oMoves.length === 9) {
+    over = true
+    $('#newGameButton').show()
+    gameUi.tie()
+  }
 }
 
 // this function adds the moves function to add to the moves arrays and also checks game status
@@ -74,6 +77,10 @@ const gameOver = function () {
   }
 }
 
+const newGame = function () {
+
+}
+
 // if no win
 let player = 'x'
 const playerSwitch = function (square) {
@@ -93,5 +100,6 @@ module.exports = {
   oMovesStore,
   checkGameStatus,
   gameStatus,
-  gameOver
+  gameOver,
+  newGame
 }

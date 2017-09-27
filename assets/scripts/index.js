@@ -8,9 +8,9 @@ $(() => {
 })
 
 const gameEvents = require('./events')
-const gameLogic = require('./logic.js')
 
 // On document ready
 $(() => {
   $('.square').on('click', gameEvents.squareClick)
+  $('#newGameButton').on('click', gameEvents.newGame)
 })

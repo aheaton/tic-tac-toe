@@ -1,9 +1,9 @@
-html {
+/*html {
   margin: auto;
   width: auto;
   height: 100%;
   background-color: #9EF9F9;
-}
+}*/
 
 header {
 	float:right;
@@ -80,4 +80,8 @@ content: " ";
 clear: both;
 height: 0;
 font-size: 0;
+}
+
+#newGameButton {
+display: none;
 }
