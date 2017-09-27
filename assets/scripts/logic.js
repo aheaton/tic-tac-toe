@@ -1,3 +1,5 @@
+const gameUi = require('./ui.js')
+
 // define all scenarios in which the user can win
 const winCases = [
   [0, 1, 2],
@@ -38,14 +40,16 @@ const gameStatus = function (winCases, moves) {
     // compare the xMoves or oMoves array with each winCases sub-array and put into common array
     const common = winCasesSub.filter(cell => moves.includes(cell))
     // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
-    if (common.length === 3) {
-      return console.log('Winner found!')
-    } else if (common.length !== 3 && (xMoves.length + oMoves.length === 9)) {
-      return console.log('Tie!')
-    } else {
-      console.log('Keep playing...')
+    console.log(common)
+    if (common.length === 3 && moves === xMoves) {
+      return gameUi.xWins()
+    } else if (common.length === 3 && moves === oMoves) {
+      return gameUi.oWins()
     }
   }
+}
+if (xMoves.length + oMoves.length === 9) {
+  gameUi.tie()
 }
 
 // this function adds the moves function to add to the moves arrays and also checks for a win
