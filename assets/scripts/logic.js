@@ -1,5 +1,5 @@
 // define all scenarios in which the user can win
-let winCases = [
+const winCases = [
 [0, 1, 2],
 [3, 4, 5],
 [6, 7, 8],
@@ -9,3 +9,17 @@ let winCases = [
 [0, 4, 8],
 [2, 4, 6]
 ]
+
+let player = 'x'
+const playerSwitch = function (square) {
+  $(square).text(player)
+  if (player === 'x') {
+    player = 'o'
+  } else {
+    player = 'x'
+  }
+}
+
+module.exports = {
+  playerSwitch
+}

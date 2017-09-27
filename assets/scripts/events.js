@@ -1,18 +1,16 @@
 // const gameApi = require('./api.js')
 // const gameUi = require('./ui.js')
 // const getFormFields = require('../../../lib/get-form-fields')
+const gameLogic = require('./logic.js')
 
-const player = 'x'
 const squareClick = function (event) {
   const square = event.target
   console.log(square)
   if ($(square).text() === 'x' || $(square).text() === 'o') {
     return null
   } else {
-  // puts either X or O in the square that is clicked and this is dependent on what "player" is set to
-    $(square).text(player)
-    // callback function which switches the "player" to either X or O conditionally
-    // playerSwitch()
+    // the following function initializes the player at game start and switches players
+    gameLogic.playerSwitch(square)
   }
 }
 
