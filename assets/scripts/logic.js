@@ -77,10 +77,6 @@ const gameOver = function () {
   }
 }
 
-const newGame = function () {
-
-}
-
 // if no win
 let player = 'x'
 const playerSwitch = function (square) {
@@ -100,6 +96,5 @@ module.exports = {
   oMovesStore,
   checkGameStatus,
   gameStatus,
-  gameOver,
-  newGame
+  gameOver
 }
