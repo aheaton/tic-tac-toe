@@ -15,8 +15,9 @@ const xMovesStore = function (square) {
   // get id from clicked cell and push to an array
   const squareNumber = $(square).attr('id')
   console.log('square number ', squareNumber)
-  xMoves.push(squareNumber)
-  return console.log('xMoves array ', xMoves)
+  // parseInt turns the squareNumber from a string to a number
+  xMoves.push(parseInt(squareNumber))
+  return xMoves
 }
 
 const oMoves = []
@@ -25,23 +26,38 @@ const oMovesStore = function (square) {
   // get id from clicked cell and push to an array
   const squareNumber = $(square).attr('id')
   console.log('square number ', squareNumber)
-  oMoves.push(squareNumber)
-  return console.log('oMoves array ', oMoves)
+  oMoves.push(parseInt(squareNumber))
+  return oMoves
 }
 
-// this function compares the winCases array with the appropriate moves array
-const commonSquares = winCases[subArray]
+// this function compares the winCases array with the appropriate moves array and lays out win logic
+const gameStatus = function (winCases, moves) {
+  for (let i = 0; i < winCases.length; i++) {
+    // want to be checking each sub-array of winCases
+    const winCasesSub = winCases[i]
+    // compare the xMoves or oMoves array with each winCases sub-array and put into common array
+    const common = winCasesSub.filter(cell => moves.includes(cell))
+    // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
+    if (common.length === 3) {
+      return console.log('Winner found!')
+    } else if (common.length !== 3 && (xMoves.length + oMoves.length === 9)) {
+      return console.log('Tie!')
+    } else {
+      console.log('Keep playing...')
+    }
+  }
+}
 
 // this function adds the moves function to add to the moves arrays and also checks for a win
 const checkWin = function (square) {
   if (player === 'x') {
     xMovesStore(square)
     // put array comparison function here
-    console.log(commonSquares(xMoves, winCases))
+    gameStatus(winCases, xMoves)
   } else {
     oMovesStore(square)
     // put array comparison function here
-    commonSquares(oMoves, winCases)
+    gameStatus(winCases, oMoves)
   }
 }
 
@@ -62,5 +78,5 @@ module.exports = {
   xMovesStore,
   oMovesStore,
   checkWin,
-  commonSquares
+  gameStatus
 }
