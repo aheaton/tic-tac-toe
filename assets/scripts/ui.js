@@ -63,6 +63,17 @@ const changePasswordFailure = function (error) {
   $('#changePassFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
+const startGameSuccess = function () {
+  console.log('Game started')
+  $('#startGameFailMessage').hide()
+  $('#startGameSuccessMessage').text('LET\'S GO!')
+}
+
+const startGameFailure = function (error) {
+  console.error(error)
+  $('#startGameFailMessage').text('Sorry, something went wrong. Please try again.')
+}
+
 module.exports = {
   xWins,
   oWins,
@@ -74,5 +85,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  startGameSuccess,
+  startGameFailure
 }

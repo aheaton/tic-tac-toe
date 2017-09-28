@@ -74,6 +74,8 @@ const checkGameStatus = function (square) {
 const gameOver = function () {
   if (over === true) {
     return true
+  } else {
+    return false
   }
 }
 

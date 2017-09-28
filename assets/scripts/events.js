@@ -5,6 +5,7 @@ const getFormFields = require('./../../lib/get-form-fields')
 
 const squareClick = function (event) {
   const square = event.target
+  $('#startGameSuccessMessage').hide()
   if ($(square).text() === 'x' || $(square).text() === 'o') {
     return null
   } else {
@@ -14,6 +15,7 @@ const squareClick = function (event) {
     } else {
     // the following function initializes the player at game start and switches players
       gameLogic.playerSwitch(square)
+      updateGame(event)
     }
   }
 }
@@ -52,10 +54,39 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const startGame = function () {
+  event.preventDefault()
+  api.create()
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
+}
+
+const updateGame = function (event) {
+  event.preventDefault()
+  const square = event.target
+  const index = parseInt(square.id)
+  const player = gameLogic.player
+  const over = gameLogic.gameOver()
+  const game = {'game': {
+    'cell': {
+      'index': index,
+      'value': player
+    },
+    'over': over
+  }
+  }
+  console.log(game)
+  api.update(game)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
+
 module.exports = {
   squareClick,
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  startGame,
+  updateGame
 }
