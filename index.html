@@ -71,8 +71,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
       <form id="change-password" class="inputFields">
+      <div class="modal-body">
       <p id="changePassSuccessMessage" class="success"></p>
       <p id="changePassFailMessage" class="failure"></p>
       <input type="password" name="passwords[old]" placeholder="Old Password" required>
@@ -84,14 +84,16 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    </div>
-    </form>
+      </div>
+      </form>
   </div>
 </div>
 </div>
 <main>
 <h1>Tic Tac Toe</h1>
 <br />
+<div id="startGameSuccessMessage" class="success"></div>
+<div id="startGameFailMessage" class="failure"></div>
 <div id="gameStatusMessage"></div>
 </br>
 <table>
@@ -112,6 +114,7 @@
   </tr>
 </table>
 <br />
+<input id="startGameButton" class="btn btn-primary" type="button" value="Start Playing">
 <input id="newGameButton" class="btn btn-primary" type="button" value="New Game">
 </main>
 

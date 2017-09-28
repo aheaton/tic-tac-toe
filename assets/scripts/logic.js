@@ -74,14 +74,17 @@ const checkGameStatus = function (square) {
 const gameOver = function () {
   if (over === true) {
     return true
+  } else {
+    return false
   }
 }
 
-// if no win
 let player = 'x'
+let lastMove = ''
 const playerSwitch = function (square) {
   // initalizes first player to x based on global variable
   $(square).text(player)
+  lastMove = player
   checkGameStatus(square)
   if (player === 'x') {
     player = 'o'
@@ -90,11 +93,14 @@ const playerSwitch = function (square) {
   }
 }
 
+const returnLastMove = () => lastMove
+
 module.exports = {
   playerSwitch,
   xMovesStore,
   oMovesStore,
   checkGameStatus,
   gameStatus,
-  gameOver
+  gameOver,
+  returnLastMove
 }
