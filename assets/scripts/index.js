@@ -26,4 +26,5 @@ $(() => {
   $('#change-password').on('submit', gameEvents.onChangePassword)
   $('.square').on('click', gameEvents.squareClick)
   $('#newGameButton').on('click', () => console.log('hi'))
+  $('#startGameButton').on('click', () => console.log('hi'))
 })
