@@ -59,11 +59,22 @@ const update = function (game) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   create,
-  update
+  update,
+  index
 }

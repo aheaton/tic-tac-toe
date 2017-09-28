@@ -16,6 +16,11 @@ const squareClick = function (event) {
     // the following function initializes the player at game start and switches players
       gameLogic.playerSwitch(square)
       updateGame(event)
+        .then(function () {
+          if (gameLogic.gameOver() === true) {
+            console.log(getGames()) // this function gets total games played after the final click and after game is declared to be over
+          }
+        })
     }
   }
 }
@@ -76,9 +81,15 @@ const updateGame = function (event) {
   }
   }
   console.log(game)
-  api.update(game)
+  return api.update(game) //  need to return the result of the ajax call so that then .then when updateGame up above is called, it can work
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
+}
+
+const getGames = function () {
+  api.index()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
 }
 
 module.exports = {
@@ -88,5 +99,6 @@ module.exports = {
   onSignOut,
   onChangePassword,
   startGame,
-  updateGame
+  updateGame,
+  getGames
 }

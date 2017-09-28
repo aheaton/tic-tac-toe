@@ -82,6 +82,14 @@ const updateGameFailure = function (error) {
   console.error(error)
 }
 
+const getGamesSuccess = function () {
+  console.log('We got games!')
+}
+
+const getGamesFailure = function (error) {
+  console.error(error)
+}
+
 module.exports = {
   xWins,
   oWins,
@@ -97,5 +105,7 @@ module.exports = {
   startGameSuccess,
   startGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  getGamesSuccess,
+  getGamesFailure
 }
