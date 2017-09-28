@@ -17,6 +17,8 @@ $(() => {
   $('.signUpInButton').on('click', function () {
     $('#signUpInModal').modal('show')
   })
+  $('#sign-up').on('submit', gameEvents.onSignUp)
+  $('#sign-in').on('submit', gameEvents.onSignIn)
   $('.square').on('click', gameEvents.squareClick)
   $('#newGameButton').on('click', () => console.log('hi'))
 })
