@@ -85,3 +85,11 @@ font-size: 0;
 #newGameButton {
 display: none;
 }
+
+#signOutButton {
+display: none;
+}
+
+#changePasswordButton {
+display: none;
+}

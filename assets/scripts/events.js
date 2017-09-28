@@ -22,7 +22,7 @@ const onSignUp = function (event) {
   const data = getFormFields(this) // data: this is the result of the object that is created from the event handler and is formatted via the getFormFields function
   event.preventDefault()
   console.log(data)
-  $('#signUpInModal').modal('hide')
+  $('#sign-up').hide()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -32,14 +32,21 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   console.log(data)
-  $('#signUpInModal').modal('hide')
   api.signIn(data) // this is where the signIn function from the api file is actually being invoked and that is why the api file is required rather than the other way around -- need to require file where you are invoking the function
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
 
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 module.exports = {
   squareClick,
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut
 }

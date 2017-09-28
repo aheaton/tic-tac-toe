@@ -1,5 +1,5 @@
 const config = require('./config')
-// const store = require('../store')
+const store = require('./store')
 
 const signUp = function (data) { // this takes in the data that is returned from the event object and formatted by the getFormFields function in the events file
   return $.ajax({
@@ -17,9 +17,19 @@ const signIn = function (data) {
   })
 }
 
+const signOut = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
-  // changePassword,
-  // signOut
+  signIn,
+  signOut
+  // changePassword
 }
