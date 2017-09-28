@@ -65,7 +65,7 @@ const updateGame = function (event) {
   event.preventDefault()
   const square = event.target
   const index = parseInt(square.id)
-  const player = gameLogic.player
+  const player = gameLogic.returnLastMove()
   const over = gameLogic.gameOver()
   const game = {'game': {
     'cell': {
