@@ -22,7 +22,6 @@ const onSignUp = function (event) {
   const data = getFormFields(this) // data: this is the result of the object that is created from the event handler and is formatted via the getFormFields function
   event.preventDefault()
   console.log(data)
-  $('#sign-up').hide()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -44,9 +43,19 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onChangePassword = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log(data)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
 module.exports = {
   squareClick,
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  onChangePassword
 }

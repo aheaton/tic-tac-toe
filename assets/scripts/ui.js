@@ -14,12 +14,13 @@ const tie = function () {
 
 const signUpSuccess = function (data) { // this is the object that is created from the ajax request
   console.log(data)
-  // $('#message').text('Signed up successfully')
+  $('#sign-up').hide()
+  $('#signUpSuccessMessage').text('Congrats, you are now registered!')
 }
 
 const signUpFailure = function (error) { // this error also comes back from the ajax request
   console.error(error)
-  // $('#message').text('Error on sign up')
+  $('#signUpFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
 const signInSuccess = function (data) {
@@ -34,7 +35,7 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (error) {
   console.error(error)
-  // $('#message').text('Error on sign in')
+  $('#signInFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
 const signOutSuccess = function () {
@@ -51,6 +52,17 @@ const signOutFailure = function (error) {
   // $('#message').text('Error on sign out')
 }
 
+const changePasswordSuccess = function () {
+  console.log('Changed password successfully')
+  $('#changePassFailMessage').hide()
+  $('#changePassSuccessMessage').text('Changed password successfully. Please use the Close button to get back to the game.')
+}
+
+const changePasswordFailure = function (error) {
+  console.error(error)
+  $('#changePassFailMessage').text('Sorry, something went wrong. Please try again.')
+}
+
 module.exports = {
   xWins,
   oWins,
@@ -60,5 +72,7 @@ module.exports = {
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }

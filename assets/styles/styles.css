@@ -23,8 +23,6 @@ button:focus, button:active, button:hover {
 
 button {
   cursor: pointer;
-  background-color: black;
-  color: white;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
@@ -92,4 +90,12 @@ display: none;
 
 #changePasswordButton {
 display: none;
+}
+
+.failure {
+  color: red;
+}
+
+.success {
+  color: green;
 }
