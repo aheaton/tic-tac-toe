@@ -1,5 +1,4 @@
 const store = require('./store')
-const gameLogic = require('./logic.js')
 
 const signUpSuccess = function (data) { // this is the object that is created from the ajax request
   console.log(data)
@@ -30,7 +29,6 @@ const signOutSuccess = function () {
   console.log('Signed out successfully')
   $('#signUpInModal').modal('show')
   $('#changePasswordButton').hide()
-  gameLogic.resetGame()
   store.user = null
 }
 
@@ -53,6 +51,7 @@ const changePasswordFailure = function (error) {
 const startGameSuccess = function (data) {
   console.log('Game started')
   $('.game-board').show()
+  $('#startGameButton').hide()
   $('#startGameFailMessage').hide()
   $('#startGameSuccessMessage').text('LET\'S GO!')
   store.game = data.game
@@ -70,11 +69,13 @@ const updateGameSuccess = function () {
 
 const updateGameFailure = function (error) {
   console.error(error)
+  $('#updateGameFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
 const getGamesSuccess = function (data) {
   console.log('We got games!')
   console.log(data.games)
+  $('.total-games-label').show()
   $('#game-stats').html(data.games.length)
 }
 

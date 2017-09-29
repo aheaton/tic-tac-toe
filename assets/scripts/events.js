@@ -47,6 +47,7 @@ const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
+    .then(resetSignOut)
     .catch(ui.signOutFailure)
 }
 
@@ -59,7 +60,7 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-const startGame = function () {
+const startGame = function (event) {
   event.preventDefault()
   api.create()
     .then(ui.startGameSuccess)
@@ -99,6 +100,13 @@ const resetBoard = function () {
   startGame()
 }
 
+const resetSignOut = function () {
+  $('.square').text('')
+  $('#gameStatusMessage').hide()
+  $('.total-games-label').hide()
+  gameLogic.resetGame()
+}
+
 module.exports = {
   squareClick,
   onSignUp,
@@ -108,5 +116,6 @@ module.exports = {
   startGame,
   updateGame,
   getGames,
-  resetBoard
+  resetBoard,
+  resetSignOut
 }

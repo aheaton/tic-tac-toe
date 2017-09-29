@@ -99,19 +99,15 @@ const resetGame = function () {
 
 const xWins = function () {
   $('#newGameButton').show()
-  $('#startGameButton').hide()
   return $('#gameStatusMessage').text('x Wins!')
 }
 
 const oWins = function () {
-  $('#newGameButton').show()
-  $('#startGameButton').hide()
   return $('#gameStatusMessage').text('o Wins!')
 }
 
 const tie = function () {
   $('#newGameButton').show()
-  $('#startGameButton').hide()
   return $('#gameStatusMessage').text('It\'s a tie...')
 }
 

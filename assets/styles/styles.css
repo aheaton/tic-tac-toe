@@ -96,3 +96,7 @@ footer{
 .game-board {
   display: none;
 }
+
+.total-games-label {
+  display: none;
+}
