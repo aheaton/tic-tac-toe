@@ -40,6 +40,7 @@ const gameStatus = function (winCases, moves) {
     // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
     if (common.length === 3 && moves === xMoves) {
       over = true
+      console.log('this should be hit')
       return xWins()
     } else if (common.length === 3 && moves === oMoves) {
       over = true
@@ -99,17 +100,18 @@ const resetGame = function () {
 
 const xWins = function () {
   $('#newGameButton').show()
-  return $('#gameStatusMessage').text('x Wins!')
+  $('#gameStatusMessage1').show()
+  console.log('testing')
 }
 
 const oWins = function () {
   $('#newGameButton').show()
-  return $('#gameStatusMessage').text('o Wins!')
+  $('#gameStatusMessage2').show()
 }
 
 const tie = function () {
   $('#newGameButton').show()
-  return $('#gameStatusMessage').text('It\'s a tie...')
+  $('#gameStatusMessage3').show()
 }
 
 module.exports = {

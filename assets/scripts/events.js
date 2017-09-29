@@ -18,7 +18,7 @@ const squareClick = function (event) {
       updateGame(event)
         .then(function () {
           if (gameLogic.gameOver() === true) {
-            getGames() // this function gets total games played after the final click and after game is declared to be over
+            getGames() // this function gets total games played after the final click and after game is declared to be over. Need .then() to make sure prior ajax call is finished before this function runs.
           }
         })
     }
@@ -95,14 +95,14 @@ const getGames = function () {
 
 const resetBoard = function (event) {
   $('.square').text('')
-  $('#gameStatusMessage').hide()
+  $('.gameStatusMessage').hide()
   gameLogic.resetGame()
   startGame(event)
 }
 
 const resetSignOut = function () {
   $('.square').text('')
-  $('#gameStatusMessage').hide()
+  $('.gameStatusMessage').hide()
   $('.game-board').hide()
   $('#startGameButton').show()
   $('#newGameButton').hide()

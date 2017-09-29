@@ -100,3 +100,7 @@ footer{
 .total-games-label {
   display: none;
 }
+
+.gameStatusMessage {
+  display: none;
+}

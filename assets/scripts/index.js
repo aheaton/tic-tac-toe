@@ -11,12 +11,12 @@ const gameEvents = require('./events')
 
 // On document ready
 $(() => {
-  $('#signUpInModal').modal('show')
+  $('#signUpInModal').modal('show') // this shows the sign up and sign in modal on page load
   $('#signUpInModal').on('hidden.bs.modal', (event) => {
     $('#sign-in').get(0).reset()
     $('#sign-up').get(0).reset()
   })
-  $('#changePasswordModal').on('hidden.bs.modal', (event) => $('#change-password').get(0).reset())
+  $('#changePasswordModal').on('hidden.bs.modal', (event) => $('#change-password').get(0).reset()) // this clears out forms
   $('#changePasswordButton').on('click', function () {
     $('#changePasswordModal').modal('show')
   })
