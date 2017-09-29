@@ -1,23 +1,10 @@
 const store = require('./store')
-
-const xWins = function () {
-  $('#newGameButton').show()
-  return $('#gameStatusMessage').text('x Wins!')
-}
-
-const oWins = function () {
-  $('#newGameButton').show()
-  return $('#gameStatusMessage').text('o Wins!')
-}
-
-const tie = function () {
-  $('#newGameButton').show()
-  return $('#gameStatusMessage').text('It\'s a tie...')
-}
+const gameLogic = require('./logic.js')
 
 const signUpSuccess = function (data) { // this is the object that is created from the ajax request
   console.log(data)
   $('#sign-up').hide()
+  $('#signInFailMessage').hide()
   $('#signUpSuccessMessage').text('Congrats, you are now registered!')
 }
 
@@ -45,12 +32,13 @@ const signOutSuccess = function () {
   $('#signUpInModal').modal('show')
   $('#signUpInButton').hide()
   $('#changePasswordButton').hide()
+  gameLogic.resetGame()
   store.user = null
 }
 
 const signOutFailure = function (error) {
   console.error(error)
-  // $('#message').text('Error on sign out')
+  $('#signOutFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
 const changePasswordSuccess = function () {
@@ -97,9 +85,6 @@ const getGamesFailure = function (error) {
 }
 
 module.exports = {
-  xWins,
-  oWins,
-  tie,
   signUpSuccess,
   signUpFailure,
   signInSuccess,

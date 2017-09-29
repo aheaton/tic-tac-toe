@@ -1,5 +1,3 @@
-const gameUi = require('./ui.js')
-
 // define all scenarios in which the user can win
 const winCases = [
   [0, 1, 2],
@@ -42,15 +40,15 @@ const gameStatus = function (winCases, moves) {
     // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
     if (common.length === 3 && moves === xMoves) {
       over = true
-      return gameUi.xWins()
+      return xWins()
     } else if (common.length === 3 && moves === oMoves) {
       over = true
-      return gameUi.oWins()
+      return oWins()
     }
   }
   if (xMoves.length + oMoves.length === 9) {
     over = true
-    gameUi.tie()
+    tie()
   }
 }
 
@@ -99,6 +97,24 @@ const resetGame = function () {
   oMoves = []
 }
 
+const xWins = function () {
+  $('#newGameButton').show()
+  $('#startGameButton').hide()
+  return $('#gameStatusMessage').text('x Wins!')
+}
+
+const oWins = function () {
+  $('#newGameButton').show()
+  $('#startGameButton').hide()
+  return $('#gameStatusMessage').text('o Wins!')
+}
+
+const tie = function () {
+  $('#newGameButton').show()
+  $('#startGameButton').hide()
+  return $('#gameStatusMessage').text('It\'s a tie...')
+}
+
 module.exports = {
   playerSwitch,
   xMovesStore,
@@ -107,5 +123,8 @@ module.exports = {
   gameStatus,
   gameOver,
   returnLastMove,
-  resetGame
+  resetGame,
+  xWins,
+  oWins,
+  tie
 }
