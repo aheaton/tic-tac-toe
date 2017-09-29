@@ -16,7 +16,7 @@
 <input id="changePasswordButton" class="btn btn-primary" type="button" value="Change Password">
 </header>
 <div id="signUpInModal"  data-backdrop="static" data-keyboard="false" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="modalLabel">Let's Play Tic Tac Toe</h3>
@@ -55,7 +55,7 @@
 </div>
 </div>
 <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="modalLabel">Change Password</h3>
@@ -82,17 +82,18 @@
   </div>
 </div>
 </div>
+<div class="container">
 <main>
-<h1>Tic Tac Toe</h1>
+<h1 class="title">Tic Tac Toe</h1>
 <br />
 <div id="startGameSuccessMessage" class="success"></div>
 <div id="startGameFailMessage" class="failure"></div>
 <div id="signOutFailMessage" class="failure"></div>
 <div id="updateGameFailMessage" class="failure"></div>
 <div id="getGamesFailMessage" class="failure"></div>
-<h4 class="gameStatusMessage" id="gameStatusMessage1">x Wins!</h4>
-<h4 class="gameStatusMessage" id="gameStatusMessage2">o Wins!</h4>
-<h4 class="gameStatusMessage" id="gameStatusMessage3">It's a tie...</h4>
+<h3 class="gameStatusMessage" id="gameStatusMessage1">x Wins!</h3>
+<h3 class="gameStatusMessage" id="gameStatusMessage2">o Wins!</h3>
+<h3 class="gameStatusMessage" id="gameStatusMessage3">It's a tie...</h3>
 </br>
 <table class="game-board">
   <tr>
@@ -112,16 +113,12 @@
   </tr>
 </table>
 <br />
-<input id="startGameButton" class="btn btn-primary" type="button" value="Start Playing">
+<input id="startGameButton" class="btn-xl btn-primary" type="button" value="Start Playing">
 <input id="newGameButton" class="btn btn-primary" type="button" value="New Game">
 <br />
 <br />
 <h5 class="total-games-label">Total Games Played: <span id="game-stats"></span></h5>
 </main>
-
-<footer class="clearfix">
-<p>Created by Alicia Heaton</p>
-</footer>
-
+</div>
 </body>
 </html>

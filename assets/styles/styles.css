@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Arbutus';
+
 header {
 	float:right;
 }
@@ -34,10 +36,13 @@ main {
 }
 
 h1 {
-	/*font-family: "Bangers", cursive;*/
 	font-size: 75px;
 	font-weight: bold;
-	padding: 50px;
+	padding: 25px;
+}
+
+.title {
+  font-family: 'Arbutus', cursive;
 }
 
 table {
@@ -51,26 +56,6 @@ td {
 	border: 5px solid black;
 	height: 125px;
 	width: 125px;
-}
-
-footer{
-  /*font-family: 'Devonshire', cursive;*/
-  color: black;
-  display: block;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 0 auto;
-  padding-top: 100px;
-  text-align: center;
-}
-
-.clearfix:after {
-  clear: both;
-  content: " ";
-  display: block;
-  font-size: 0;
-  height: 0;
-  visibility: hidden;
 }
 
 #newGameButton {
@@ -103,4 +88,19 @@ footer{
 
 .gameStatusMessage {
   display: none;
+  font-family: 'Arbutus', cursive;
+}
+
+.square {
+  font-family: 'Arbutus', cursive;
+  font-size: 50px;
+  vertical-align: middle;
+  color: #9EF9F9;
+  background-color: grey;
+}
+
+.btn-xl {
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 30px;
 }
