@@ -29,7 +29,6 @@ const signInSuccess = function (data) {
   $('#signUpInButton').hide()
   $('#signOutButton').show()
   $('#changePasswordButton').show()
-  // $('#message').text('Signed in successfully')
   store.user = data.user // this puts a user property in the store object located in the store file; doing this on signInSucess because comes back from the response here
 }
 
@@ -43,7 +42,6 @@ const signOutSuccess = function () {
   $('#signUpInModal').modal('show')
   $('#signUpInButton').hide()
   $('#changePasswordButton').hide()
-  // $('#message').text('Signed out successfully')
   store.user = null
 }
 
@@ -63,10 +61,11 @@ const changePasswordFailure = function (error) {
   $('#changePassFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
-const startGameSuccess = function () {
+const startGameSuccess = function (data) {
   console.log('Game started')
   $('#startGameFailMessage').hide()
   $('#startGameSuccessMessage').text('LET\'S GO!')
+  store.game = data.game
 }
 
 const startGameFailure = function (error) {

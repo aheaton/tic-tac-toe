@@ -49,8 +49,12 @@ const create = function () {
 }
 
 const update = function (game) {
+  console.log('after ajax call game', game)
+  console.log('game id is', store.game.id)
+  console.log('token is', store.user.token)
+  console.log('store.game is ', store.game)
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.user.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
