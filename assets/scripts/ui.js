@@ -23,6 +23,10 @@ const signInFailure = function () {
 
 const signOutSuccess = function () {
   $('#signUpInModal').modal('show')
+  $('#sign-up').show()
+  $('#signUpSuccessMessage').hide()
+  $('#signOutFailMessage').hide()
+  $('#signUpFailMessage').hide()
   $('#changePasswordButton').hide()
   store.user = null
 }
@@ -53,6 +57,7 @@ const startGameFailure = function () {
 }
 
 const updateGameSuccess = function () {
+  $('#updateGameFailMessage').hide()
 }
 
 const updateGameFailure = function () {
