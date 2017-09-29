@@ -16,7 +16,6 @@ const signUpFailure = function (error) { // this error also comes back from the 
 const signInSuccess = function (data) {
   console.log(data)
   $('#signUpInModal').modal('hide')
-  $('#signUpInButton').hide()
   $('#signOutButton').show()
   $('#changePasswordButton').show()
   store.user = data.user // this puts a user property in the store object located in the store file; doing this on signInSucess because comes back from the response here
@@ -30,7 +29,6 @@ const signInFailure = function (error) {
 const signOutSuccess = function () {
   console.log('Signed out successfully')
   $('#signUpInModal').modal('show')
-  $('#signUpInButton').hide()
   $('#changePasswordButton').hide()
   gameLogic.resetGame()
   store.user = null
