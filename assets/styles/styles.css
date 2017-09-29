@@ -99,3 +99,7 @@ display: none;
 .success {
   color: green;
 }
+
+.game-board {
+  display: none;
+}

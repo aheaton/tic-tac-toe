@@ -13,7 +13,7 @@ const winCases = [
 ]
 
 // an array to stores x's moves
-const xMoves = []
+let xMoves = []
 const xMovesStore = function (square) {
   // get id from clicked cell and push to an array
   const squareNumber = $(square).attr('id')
@@ -23,7 +23,7 @@ const xMovesStore = function (square) {
 }
 
 // an array to stores o's moves
-const oMoves = []
+let oMoves = []
 const oMovesStore = function (square) {
   // get id from clicked cell and push to an array
   const squareNumber = $(square).attr('id')
@@ -42,17 +42,14 @@ const gameStatus = function (winCases, moves) {
     // checks for winner (i.e. 3 matching cells with the winCases sub-arrays)
     if (common.length === 3 && moves === xMoves) {
       over = true
-      $('#newGameButton').show()
       return gameUi.xWins()
     } else if (common.length === 3 && moves === oMoves) {
       over = true
-      $('#newGameButton').show()
       return gameUi.oWins()
     }
   }
   if (xMoves.length + oMoves.length === 9) {
     over = true
-    $('#newGameButton').show()
     gameUi.tie()
   }
 }
@@ -95,6 +92,13 @@ const playerSwitch = function (square) {
 
 const returnLastMove = () => lastMove
 
+const resetGame = function () {
+  over = false
+  player = 'x'
+  xMoves = []
+  oMoves = []
+}
+
 module.exports = {
   playerSwitch,
   xMovesStore,
@@ -102,5 +106,6 @@ module.exports = {
   checkGameStatus,
   gameStatus,
   gameOver,
-  returnLastMove
+  returnLastMove,
+  resetGame
 }

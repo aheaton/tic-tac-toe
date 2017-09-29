@@ -25,6 +25,6 @@ $(() => {
   $('#signOutButton').on('click', gameEvents.onSignOut)
   $('#change-password').on('submit', gameEvents.onChangePassword)
   $('.square').on('click', gameEvents.squareClick)
-  $('#newGameButton').on('click', () => console.log('hi'))
+  $('#newGameButton').on('click', gameEvents.resetBoard)
   $('#startGameButton').on('click', gameEvents.startGame)
 })

@@ -92,6 +92,13 @@ const getGames = function () {
     .catch(ui.getGamesFailure)
 }
 
+const resetBoard = function () {
+  $('.square').text('')
+  $('#gameStatusMessage').hide()
+  gameLogic.resetGame()
+  startGame()
+}
+
 module.exports = {
   squareClick,
   onSignUp,
@@ -100,5 +107,6 @@ module.exports = {
   onChangePassword,
   startGame,
   updateGame,
-  getGames
+  getGames,
+  resetBoard
 }

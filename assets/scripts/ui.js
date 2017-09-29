@@ -1,14 +1,17 @@
 const store = require('./store')
 
 const xWins = function () {
+  $('#newGameButton').show()
   return $('#gameStatusMessage').text('x Wins!')
 }
 
 const oWins = function () {
+  $('#newGameButton').show()
   return $('#gameStatusMessage').text('o Wins!')
 }
 
 const tie = function () {
+  $('#newGameButton').show()
   return $('#gameStatusMessage').text('It\'s a tie...')
 }
 
@@ -63,9 +66,11 @@ const changePasswordFailure = function (error) {
 
 const startGameSuccess = function (data) {
   console.log('Game started')
+  $('.game-board').show()
   $('#startGameFailMessage').hide()
   $('#startGameSuccessMessage').text('LET\'S GO!')
   store.game = data.game
+  console.log(store.game)
 }
 
 const startGameFailure = function (error) {
