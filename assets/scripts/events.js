@@ -80,7 +80,7 @@ const updateGame = function (event) {
     'over': over
   }
   }
-  console.log(game)
+  console.log('game is ', game)
   return api.update(game) //  need to return the result of the ajax call so that then .then when updateGame up above is called, it can work
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
