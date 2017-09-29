@@ -18,7 +18,7 @@ const squareClick = function (event) {
       updateGame(event)
         .then(function () {
           if (gameLogic.gameOver() === true) {
-            console.log(getGames()) // this function gets total games played after the final click and after game is declared to be over
+            getGames() // this function gets total games played after the final click and after game is declared to be over
           }
         })
     }

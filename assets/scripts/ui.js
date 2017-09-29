@@ -82,8 +82,10 @@ const updateGameFailure = function (error) {
   console.error(error)
 }
 
-const getGamesSuccess = function () {
+const getGamesSuccess = function (data) {
   console.log('We got games!')
+  console.log(data.games)
+  $('#game-stats').html(data.games.length)
 }
 
 const getGamesFailure = function (error) {
