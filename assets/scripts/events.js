@@ -93,16 +93,19 @@ const getGames = function () {
     .catch(ui.getGamesFailure)
 }
 
-const resetBoard = function () {
+const resetBoard = function (event) {
   $('.square').text('')
   $('#gameStatusMessage').hide()
   gameLogic.resetGame()
-  startGame()
+  startGame(event)
 }
 
 const resetSignOut = function () {
   $('.square').text('')
   $('#gameStatusMessage').hide()
+  $('.game-board').hide()
+  $('#startGameButton').show()
+  $('#newGameButton').hide()
   $('.total-games-label').hide()
   gameLogic.resetGame()
 }

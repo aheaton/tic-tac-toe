@@ -103,6 +103,7 @@ const xWins = function () {
 }
 
 const oWins = function () {
+  $('#newGameButton').show()
   return $('#gameStatusMessage').text('o Wins!')
 }
 

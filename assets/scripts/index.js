@@ -12,6 +12,11 @@ const gameEvents = require('./events')
 // On document ready
 $(() => {
   $('#signUpInModal').modal('show')
+  $('#signUpInModal').on('hidden.bs.modal', (event) => {
+    $('#sign-in').get(0).reset()
+    $('#sign-up').get(0).reset()
+  })
+  $('#changePasswordModal').on('hidden.bs.modal', (event) => $('#change-password').get(0).reset())
   $('#changePasswordButton').on('click', function () {
     $('#changePasswordModal').modal('show')
   })
