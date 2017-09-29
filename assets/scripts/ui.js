@@ -81,6 +81,7 @@ const getGamesSuccess = function (data) {
 
 const getGamesFailure = function (error) {
   console.error(error)
+  $('#getGamesFailMessage').text('Sorry, something went wrong. Please try again.')
 }
 
 module.exports = {
