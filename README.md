@@ -24,7 +24,7 @@ Once planning was complete, I approached development in separate pieces - basic 
 Make the application mobile-optimized. My focus for this first project was to make the game clean and defect-free, but I would like to design future applications with a mobile-first mindset.
 
 <h3>Wireframes:</h3>
-https://imgur.com/a/2QbYV
+https://imgur.com/r9tFZqD
 
 <h3>User Stories:</h3>
-https://docs.google.com/document/d/1Ovix3GEWt-_u_WTHhdjqy866rI9ssxapbPazYFBTAGQ/edit
+https://imgur.com/WZYHLIl
