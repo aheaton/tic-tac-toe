@@ -24,9 +24,9 @@
       </div>
       <div class="modal-body">
       <form id="sign-in" class="inputFields">
-      <p id="signUpSuccessMessage" class="success"></p>
+      <p id="signUpSuccessMessage" class="success">Congrats, you are now registered!</p>
       <h5>Sign in to play!</h5>
-      <p id="signInFailMessage" class="failure"></p>
+      <p id="signInFailMessage" class="failure">Sorry, something went wrong. Please try again.</p>
       <input type="text" name="credentials[email]" placeholder="Email Address" required>
       <br />
       <br />
@@ -38,14 +38,14 @@
       <br />
       <form id="sign-up" class="inputFields">
       <h5>Don't have an account yet? Sign up!</h5>
-      <p id="signUpFailMessage" class="failure"></p>
+      <p id="signUpFailMessage" class="failure">Sorry, something went wrong. Please try again.</p>
       <input type="text" name="credentials[email]" placeholder="Email Address" required>
       <br />
       <br />
       <input type="password" name="credentials[password]" placeholder="Password" required>
       <br />
       <br />
-      <input type="password" name="credentials[password]" placeholder="Confirm Password" required>
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
       <br />
       <br />
       <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
@@ -58,16 +58,16 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="modalLabel">Change Password</h3>
-        <h5>You can change your password by using the form below.</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <h3 class="modal-title" id="modalLabel">Change Password</h3>
+        <h5>You can change your password by using the form below.</h5>
       </div>
       <form id="change-password" class="inputFields">
       <div class="modal-body">
-      <p id="changePassSuccessMessage" class="success"></p>
-      <p id="changePassFailMessage" class="failure"></p>
+      <p id="changePassSuccessMessage" class="success">Changed password successfully. Please use the Close button to get back to the game.</p>
+      <p id="changePassFailMessage" class="failure">Sorry, something went wrong. Please try again.</p>
       <input type="password" name="passwords[old]" placeholder="Old Password" required>
       <br />
       <br />
@@ -86,11 +86,11 @@
 <main>
 <h1 class="title">Tic Tac Toe</h1>
 <br />
-<div id="startGameSuccessMessage" class="success"></div>
-<div id="startGameFailMessage" class="failure"></div>
-<div id="signOutFailMessage" class="failure"></div>
-<div id="updateGameFailMessage" class="failure"></div>
-<div id="getGamesFailMessage" class="failure"></div>
+<div id="startGameSuccessMessage" class="success">LET'S GO!</div>
+<div id="startGameFailMessage" class="failure">Sorry, something went wrong. Please try again.</div>
+<div id="signOutFailMessage" class="failure">Sorry, something went wrong. Please try again.</div>
+<div id="updateGameFailMessage" class="failure">Sorry, something went wrong. Please try again.</div>
+<div id="getGamesFailMessage" class="failure">Sorry, something went wrong. Please try again.</div>
 <h3 class="gameStatusMessage" id="gameStatusMessage1">x Wins!</h3>
 <h3 class="gameStatusMessage" id="gameStatusMessage2">o Wins!</h3>
 <h3 class="gameStatusMessage" id="gameStatusMessage3">It's a tie...</h3>

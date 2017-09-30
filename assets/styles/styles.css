@@ -104,3 +104,43 @@ td {
     font-size: 20px;
     border-radius: 30px;
 }
+
+#signInFailMessage {
+  display: none;
+}
+
+#signUpSuccessMessage {
+  display: none;
+}
+
+#signUpFailMessage {
+  display: none;
+}
+
+#signOutFailMessage {
+  display: none;
+}
+
+#changePassSuccessMessage {
+  display: none;
+}
+
+#changePassFailMessage {
+  display: none;
+}
+
+#startGameFailMessage {
+  display: none;
+}
+
+#updateGameFailMessage {
+  display: none;
+}
+
+#startGameSuccessMessage {
+  display: none;
+}
+
+#getGamesFailMessage {
+  display: none;
+}

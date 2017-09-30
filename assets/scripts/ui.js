@@ -3,11 +3,11 @@ const store = require('./store')
 const signUpSuccess = function (data) { // this is the object that is created from the ajax request
   $('#sign-up').hide()
   $('#signInFailMessage').hide()
-  $('#signUpSuccessMessage').text('Congrats, you are now registered!')
+  $('#signUpSuccessMessage').show()
 }
 
 const signUpFailure = function () { // this error also comes back from the ajax request
-  $('#signUpFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#signUpFailMessage').show()
 }
 
 const signInSuccess = function (data) {
@@ -18,42 +18,45 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#signInFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#signInFailMessage').show()
+  $('#signUpSuccessMessage').hide()
 }
 
 const signOutSuccess = function () {
   $('#signUpInModal').modal('show')
   $('#sign-up').show()
   $('#signUpSuccessMessage').hide()
-  $('#signOutFailMessage').hide()
   $('#signUpFailMessage').hide()
+  $('#signOutFailMessage').hide()
   $('#changePasswordButton').hide()
+  $('#signInFailMessage').hide()
   store.user = null
 }
 
 const signOutFailure = function () {
-  $('#signOutFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#signOutFailMessage').show()
 }
 
 const changePasswordSuccess = function () {
   $('#changePassFailMessage').hide()
-  $('#changePassSuccessMessage').text('Changed password successfully. Please use the Close button to get back to the game.')
+  $('#changePassSuccessMessage').show()
 }
 
 const changePasswordFailure = function () {
-  $('#changePassFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#changePassFailMessage').show()
+  $('#changePassSuccessMessage').hide()
 }
 
 const startGameSuccess = function (data) {
   $('.game-board').show()
   $('#startGameButton').hide()
   $('#startGameFailMessage').hide()
-  $('#startGameSuccessMessage').text('LET\'S GO!')
+  $('#startGameSuccessMessage').show()
   store.game = data.game
 }
 
 const startGameFailure = function () {
-  $('#startGameFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#startGameFailMessage').show()
 }
 
 const updateGameSuccess = function () {
@@ -61,7 +64,7 @@ const updateGameSuccess = function () {
 }
 
 const updateGameFailure = function () {
-  $('#updateGameFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#updateGameFailMessage').show()
 }
 
 const getGamesSuccess = function (data) {
@@ -70,7 +73,7 @@ const getGamesSuccess = function (data) {
 }
 
 const getGamesFailure = function () {
-  $('#getGamesFailMessage').text('Sorry, something went wrong. Please try again.')
+  $('#getGamesFailMessage').show()
 }
 
 module.exports = {

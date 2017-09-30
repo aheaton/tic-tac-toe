@@ -106,6 +106,11 @@ const resetSignOut = function () {
   gameLogic.resetGame()
 }
 
+const changePasswordReset = function () {
+  $('#changePassFailMessage').hide()
+  $('#changePassSuccessMessage').hide()
+}
+
 module.exports = {
   squareClick,
   onSignUp,
@@ -116,5 +121,6 @@ module.exports = {
   updateGame,
   getGames,
   resetBoard,
-  resetSignOut
+  resetSignOut,
+  changePasswordReset
 }
