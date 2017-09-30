@@ -1,5 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Arbutus';
 
+body { background: #9EF9F9 !important; }
+
 header {
 	float:right;
 }
@@ -38,7 +40,8 @@ main {
 h1 {
 	font-size: 75px;
 	font-weight: bold;
-	padding: 25px;
+	padding: 5px;
+  padding-top: 45px;
 }
 
 .title {
@@ -105,6 +108,10 @@ td {
     border-radius: 30px;
 }
 
+.startGame {
+  font-family: 'Arbutus', cursive;
+}
+
 #signInFailMessage {
   display: none;
 }
@@ -134,10 +141,6 @@ td {
 }
 
 #updateGameFailMessage {
-  display: none;
-}
-
-#startGameSuccessMessage {
   display: none;
 }
 

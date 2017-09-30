@@ -51,7 +51,6 @@ const startGameSuccess = function (data) {
   $('.game-board').show()
   $('#startGameButton').hide()
   $('#startGameFailMessage').hide()
-  $('#startGameSuccessMessage').show()
   store.game = data.game
 }
 

@@ -5,7 +5,6 @@ const getFormFields = require('./../../lib/get-form-fields')
 
 const squareClick = function (event) {
   const square = event.target
-  $('#startGameSuccessMessage').hide()
   if ($(square).text() === 'x' || $(square).text() === 'o') {
     return null
   } else {
